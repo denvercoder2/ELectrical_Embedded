@@ -7,11 +7,19 @@
  * Developed by Scott Holley for some reason
  */
 
+/* Choose standard or metric */
+#define NOT_FREEDOM_UNITS
 
+#define RADII 180
 
+#define FPAERROR 93.860937 
 /* Prototypes for main function */
 
-double DegreestoRadians(double degree);
+/* Convert Degree passed in to radian value */
+long double toRadians(const long double degree);
 
-double getDistance(double lat1,double long1,
-                double lat2, double long2);
+/* get the distance between two points*/
+long double getDistance(double lat1,double long1,
+                double lat2,double long2);
+
+std::vector<long double> storeDistances(void);
