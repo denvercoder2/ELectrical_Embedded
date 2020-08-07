@@ -6,11 +6,12 @@
 #include <algorithm>
 #include "Everywhere.h"
 
+/* this is a greedy choice algorithm, I only care about the best right now */
+inline long double chooseBestRoute(long double total_distance, long double route1, long double route2){
+    return total_distance += std::min(route1, route2);
+}
 
-
-inline long double toRadians(const long double degree) 
-{ 
-    long double one_deg = (M_PI) / 180; 
+inline long double toRadians(const long double degree){ 
     return ((M_PI) / RADII * degree); 
 } 
   
@@ -47,12 +48,7 @@ long double getDistance(long double lat1, long double long1,
     return ans; 
 } 
 
-/* this is a greedy choice algorithm, I only care about the best right now */
-inline long double chooseBestRoute(long double total_distance, long double route1, long double route2){
-    total_distance += std::min(route1, route2);
 
-    return total_distance;
-}
 
 #if 0
 /**
@@ -77,8 +73,7 @@ std::vector<long double> storeDistances(void){
 }
 #endif
 
-int main() 
-{ 
+int func(){ 
     long double total_distance = 0.0;
     long double total_distance_new;
     long double lat1 = WinnemuccaNV_LAT; 
@@ -97,15 +92,15 @@ int main()
                      lat2, long2), format); 
     
 
-
     /**
      * In order for this to be done efficiently, it needs to be loaded into memory at the next
      * point of execution, instead of all at once.
      */
-    total_distance_new = chooseBestRoute(total_distance, 1000, getDistance(lat1, long1,  
+    long double route1 = 1000.00;
+    total_distance_new = chooseBestRoute(total_distance, route1, getDistance(lat1, long1,  
                      lat2, long2));
     
-    printf("\nNew total distance: %Lf", total_distance_new);
+    printf("\nNew total distance traveled: %Lf", total_distance_new);
   
     return 0; 
 } 
