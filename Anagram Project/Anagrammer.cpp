@@ -8,7 +8,7 @@
 #include <vector>
 #include <sstream>
 #include <stdio.h>
-
+#include "Anagram.h"
 
 /* May replace with a struct in the future */
 std::vector<std::string> AlphabetFruits() {
@@ -44,7 +44,6 @@ std::vector<std::string> AlphabetFruits() {
 
     return Fruits_and_Common_Words; /* A vector containing the first characters of all words entered */
 }
-
 
 std::vector<std::string> getOriginPhrase() {
 
@@ -115,7 +114,7 @@ int main(int argc, char** argv){
 
     printf("Anagrammed phrase for entered words: \n");
     for (i = 0; i < AnagramVector.size(); i++) {
-        printf("%s \n", AnagramVector[i].c_str());
+        printf("%s \n", AnagramVector[i]);
     }
 
     system("pause");

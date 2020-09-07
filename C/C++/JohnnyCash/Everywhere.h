@@ -23,7 +23,7 @@ std::vector<long double> storeDistances(void);
 inline long double chooseBestRoute(long double total_distance, long double route1, long double route2);
 
 /* Choose standard or metric */
-#define __FREEDOM_UNITS__
+// #define __FREEDOM_UNITS__
 #define func                main
 
 /* Constant Radius */
