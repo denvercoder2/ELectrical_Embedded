@@ -33,9 +33,9 @@ inline double getPower(double Force, double Displacement) {
 inline double getFriction(double FrictionalForce, double NormalForce) {
     return FrictionalForce/NormalForce;
 }
-
+ 
 inline double getDisplacement(double InitialVelocity, double Time, double Acceleration) {
-    return (InitialVelocity * Time) + (.500 * (Acceleration * pow(Time, 2));
+    return (InitialVelocity * Time) + (.500 * (Acceleration * pow(Time, 2)));
 }
 
 inline double getVelocity(double Displacement, double Time_taken){
